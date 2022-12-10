@@ -17,19 +17,16 @@
                     <a class="nav-link " href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Shop Pre-Owned</a>
+                    <a class="nav-link" href="#">Profile</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Shop New Cars</a>
+                    <a class="nav-link" href="#">Notifications</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Clearence Event</a>
+                    <a class="nav-link" href="#">Messages</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="#">Search</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link btn btn-dark text-white" type="button" href="#" data-toggle="modal" data-target="#myModal">Sign In</a>                  
