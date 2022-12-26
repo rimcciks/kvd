@@ -14,25 +14,25 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto topnav">
                 <li class="nav-item active">
-                    <a class="nav-link " href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link " href="#">Sākums <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Profile</a>
+                    <a class="nav-link" href="#">Profils</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Notifications</a>
+                    <a class="nav-link" href="#">Paziņojumi</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Messages</a>
+                    <a class="nav-link" href="#">Ziņas</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Search</a>
+                    <a class="nav-link" href="#">Meklēt</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link btn btn-dark text-white" type="button" href="#" data-toggle="modal" data-target="#myModal">Sign In</a>                  
+                    <a class="nav-link btn btn-dark text-white" type="button" href="#" data-toggle="modal" data-target="#myModal">Ienākt</a>                  
                 </li>
                 <li class="nav-item active ">
-                    <a class="nav-link btn btn-danger text-white" type="button" href="#" data-toggle="modal" data-target="#myModal">Register</a>
+                    <a class="nav-link btn btn-danger text-white" type="button" href="#" data-toggle="modal" data-target="#myModal">Reģistrēties</a>
                 </li>
             </ul>
         </div> 
