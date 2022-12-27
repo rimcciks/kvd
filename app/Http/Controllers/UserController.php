@@ -8,7 +8,7 @@ class UserController extends Controller
 {
     public function getDashboard()
     {
-        return view('dashboard.blade.php');
+        return view('dashboard');
     }
 
     public function postSignUp(Request $request)
@@ -31,6 +31,10 @@ class UserController extends Controller
 
     public function postSignIn(Request $request)
     {
-
+       if(Auth::attempt(['email' => $request['email'],'password' => $request['password']])){
+        return redirect()->route('dashboard');
+       }else{
+       return redirect()->back();
+       }
     }
 }
