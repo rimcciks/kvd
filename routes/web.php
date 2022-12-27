@@ -22,4 +22,9 @@ Route::post('/signUp', [
     'postSignUp'
     ///'uses' => 'UserController@postSignUp',
     ///'as' => 'signup'
-]);
+])->name('signUp');
+
+Route::get('/dashboard',[
+    UserController::class,
+    'getDashboard'
+])->name('dashboard');
