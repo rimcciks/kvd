@@ -18,11 +18,13 @@ class CustomAuthController extends Controller
     public function registerUser(Request $request){
         $request->validate([
             'name'=>'required',
+            'surname'=>'required',
             'email'=>'required|email|unique:users',
             'password'=>'required|min:8|max:20'
         ]);
         $user = new User();
         $user->name = $request->name;
+        $user->surname = $request->surname;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
         $res = $user->save();
@@ -62,4 +64,5 @@ class CustomAuthController extends Controller
             return redirect('login');
         }
     }
+    
 }
