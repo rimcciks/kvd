@@ -1,5 +1,5 @@
 @extends('layout.app')
-@section('title', 'Dashboard')
+@section('title', 'Edit profile')
 @section('link_text', 'Go to All Posts')
 @section('link', '/post')
 
@@ -11,29 +11,40 @@
       <div class="col-md-9 personal-info">
         <h3>Personal info</h3>
         
-        <form class="form-horizontal" role="form">
+        <form action="{{route('update-user')}}" method="post">
+        @csrf
           <div class="form-group">
             <label class="col-lg-3 control-label">Name:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text">
+              <input class="form-control" name="name" type="text" value="<?php echo $results[0]->name;?>"  placeholder="Enter Name">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Surname:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text">
+              <input class="form-control" name="surname" type="text" value="<?php echo $results[0]->surname;?>" placeholder="Enter Surname">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Adress line:</label>
+            <div class="col-lg-8">
+                <input class="form-control" name="adress_line" type="text" value="<?php echo $results[0]->adressLine;?>" placeholder="Enter Adress line">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">City:</label>
             <div class="col-lg-8">
             <select name="city" id="city">
-                <!--<option value="free">Free</option>
-                <option value="starter" selected>Starter </option>
-                <option value="professional">Professional</option>
-                <option value="corporate">Corporate</option>-->
+              <option value="" disabled selected hidden>Choose City...</option>
+                
+                  
                 <?php
-                //print_r($data);
+                foreach ($results['Cities'] as $city){
+                  print_r($city); ?>
+                  <option value="" <?php if($city->id == $results[0]->city_id ){ echo 'selected';} ?> ><?php echo $city->city; ?> </option>
+                  <?php }
+                
+                //print_r($results);
                 ?>
             </select>
             </div>
@@ -42,13 +53,12 @@
             <label class="col-lg-3 control-label">Country:</label>
             <div class="col-lg-8">
             <select name="country" id="country">
-                <!--<option value="free">Free</option>
-                <option value="starter" selected>Starter </option>
-                <option value="professional">Professional</option>
-                <option value="corporate">Corporate</option>-->
-                <?php
-                //print_r($data);
-                ?>
+              <option value="" disabled selected hidden>Choose Country...</option>
+              <?php
+                foreach ($results['Countries'] as $country){
+                  //print_r($country); ?>
+                  <option value="" <?php if($country->id == $city->country_id ){ echo 'selected';} ?> ><?php echo $country->country_name; ?> </option>
+                  <?php } ?>
             </select>
             </div>
           </div>
@@ -56,26 +66,16 @@
             <label class="col-lg-3 control-label">Gender:</label>
             <div class="col-lg-8">
               <!--<input class="form-control" type="text">-->
-              <select name="gender" id="gender">
-                <!--<option value="free">Free</option>
-                <option value="starter" selected>Starter </option>
-                <option value="professional">Professional</option>
-                <option value="corporate">Corporate</option>-->
-                <?php
-                //print_r($data);
-                ?>
-            </select>
+              <input type="radio" id="Male" name="fav_language" value="M" <?php if($results[0]->gender == 'M'){ echo 'checked="checked"';} ?>>
+              <label for="html">Male</label><br>
+              <input type="radio" id="Female" name="fav_language" value="F" <?php if($results[0]->gender == 'F'){ echo 'checked="checked"';} ?>>
+              <label for="css">Female</label><br>
+              <input type="radio" id="Other" name="fav_language" value="O" <?php if($results[0]->gender == 'O'){ echo 'checked="checked"';} ?>>
+              <label for="javascript">Other</label>
             </div>
           </div>
           <div class="form-group">
-            <label class="col-lg-3 control-label">Adress line:</label>
-            <div class="col-lg-8">
-                <input class="form-control" type="text">
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-8">
-            <br>
-            <a href="dashboard" class="btn btn-primary rounded-pill">Save changes</a>
+              <button class="btn btn-block btn-primary" type="submit">Save changes</button>
           </div>
         </form>
       </div>

@@ -25,6 +25,7 @@ Route::get('/dashboard', [CustomAuthController::class, 'dashboard'])->middleware
 Route::get('/logout', [CustomAuthController::class,'logout']);
 Route::get('/post', [CustomAuthController::class, 'post'])->name('post')->middleware('isLoggedIn');
 Route::get('/add-post', [CustomAuthController::class, 'addPost'])->name('add-post')->middleware('isLoggedIn');
-Route::get('/editProfile', [UserController::class,'edit'])->middleware('alreadyLoggedIn');
+Route::get('/editProfile', [UserController::class,'editProfile'])->middleware('alreadyLoggedIn');
+Route::post('/update-user', [UserController::class,'updateUser'])->name('update-user');
 
 Route::resource('/post', 'App\Http\Controllers\PostController');
