@@ -18,10 +18,11 @@ class UserController extends Controller
             $results = \DB::select( $s );
             //$this->getCities();
             //$this->getCountries();
+            //$user_id=$data[id];
             $results['Cities']=$this->getCities();
             $results['Countries']=$this->getCountries();
-            //print_r($results);
-            //echo "{{$data->id}}";
+            print_r($results);
+            echo "{{$data->id}}";
             //print_r($results[0]->name);
             //print_r($data);
             
@@ -72,11 +73,16 @@ class UserController extends Controller
             return back()->with('fail','Something is wrong');
         }*/
         //return redirect('dashboard');*/
-        echo "test";
+        //echo "test";
          // Removed the type-hinted User model instance
-        DB::table('users')->update([
+        DB::table('users')->where('id', '=', Session::get('loginID'))->update([
             'name' => $request->name,
-            'surname' => $request->surname
+            'surname' => $request->surname,
+            'city_id' => (int) $request->city,
+            'adressLine' => $request->adress_line,
+            'gender' => $request->gender
         ]);
+        return redirect('Profile');
     }
+    
 }

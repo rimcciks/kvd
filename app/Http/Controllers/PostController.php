@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\User;
+use Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -33,10 +35,20 @@ class PostController extends Controller {
    * @return IlluminateHttpResponse
    */
   public function store(Request $request) {
+    $data = array();
+    if(Session::has('loginID')){
+        $data = User::where('id', '=', Session::get('loginID'))->first();
+        
+        //print_r($results);
+        //echo "{{$data->id}}";
+        //print_r($results[0]->name);
+        //print_r($data);
+        
+    }
     $request->validate([
       'title' => 'required',
       'category' => 'required',
-      'content' => 'required|min:50',
+      'content' => 'required|min:5',
       'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
     ]);
 
@@ -44,10 +56,11 @@ class PostController extends Controller {
     // $request->image->move(public_path('images'), $imageName);
     $request->file->storeAs('public/images', $imageName);
 
-    $postData = ['title' => $request->title, 'category' => $request->category, 'content' => $request->content, 'image' => $imageName];
+    $postData = ['title' => $request->title, 'category' => $request->category, 'content' => $request->content, 'image' => $imageName, 'user_id' => $data->id];
 
     Post::create($postData);
-    return redirect('/post')->with(['message' => 'Post added successfully!', 'status' => 'success']);
+    print_r($postData);
+    //return redirect('/post')->with(['message' => 'Post added successfully!', 'status' => 'success']);
   }
 
   /**

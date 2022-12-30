@@ -21,7 +21,7 @@ Route::get('/login', [CustomAuthController::class,'login'])->middleware('already
 Route::get('/registration', [CustomAuthController::class,'registration'])->middleware('alreadyLoggedIn');
 Route::post('/register-user', [CustomAuthController::class, 'registerUser'])->name('register-user');
 Route::post('/login-user', [CustomAuthController::class, 'loginUser'])->name('login-user');
-Route::get('/dashboard', [CustomAuthController::class, 'dashboard'])->middleware('isLoggedIn');
+Route::get('/Profile', [CustomAuthController::class, 'Profile'])->middleware('isLoggedIn');
 Route::get('/logout', [CustomAuthController::class,'logout']);
 Route::get('/post', [CustomAuthController::class, 'post'])->name('post')->middleware('isLoggedIn');
 Route::get('/add-post', [CustomAuthController::class, 'addPost'])->name('add-post')->middleware('isLoggedIn');

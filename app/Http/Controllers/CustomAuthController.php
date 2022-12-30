@@ -43,7 +43,7 @@ class CustomAuthController extends Controller
         if($user){
             if(Hash::check($request->password, $user->password)){
                 $request->session()->put('loginID', $user->id);
-                return redirect('dashboard');
+                return redirect('Profile');
             }else{
                 return back()->with('fail','Password not matching');
             }
@@ -51,12 +51,16 @@ class CustomAuthController extends Controller
             return back()->with('fail','This email is not registered');
         }
     }
-    public function dashboard(){
+    public function Profile(){
         $data = array();
         if(Session::has('loginID')){
             $data = User::where('id', '=', Session::get('loginID'))->first();
+            $s =  "select u.id, u.name, u.email, u.surname, u.city_id, u.adressLine, u.gender, c.id, c.city, c.country_id, n.id, n.country_name from users u left join city c on u.city_id = c.id left join country n on c.country_id = n.id where u.id =" . $data->id;
+            $results = \DB::select( $s );
+            $results['Cities']=(new UserController)->getCities();
+            $results['Countries']=(new UserController)->getCountries();
         }
-        return view('dashboard', compact('data'));
+        return view('Profile', compact('results'));
     }
     public function logout(){
         if(Session::has('loginID')){

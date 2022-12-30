@@ -32,16 +32,14 @@
             </div>
           </div>
           <div class="form-group">
-            <label class="col-lg-3 control-label">City:</label>
+            <label for="city" class="col-lg-3 control-label">City:</label>
             <div class="col-lg-8">
             <select name="city" id="city">
               <option value="" disabled selected hidden>Choose City...</option>
-                
-                  
                 <?php
                 foreach ($results['Cities'] as $city){
-                  print_r($city); ?>
-                  <option value="" <?php if($city->id == $results[0]->city_id ){ echo 'selected';} ?> ><?php echo $city->city; ?> </option>
+                  //print_r($city); ?>
+                  <option value="<?php echo $city->id;?>" <?php if($city->id == $results[0]->city_id ){ echo 'selected';} ?> ><?php echo $city->city; ?> </option>
                   <?php }
                 
                 //print_r($results);
@@ -66,11 +64,11 @@
             <label class="col-lg-3 control-label">Gender:</label>
             <div class="col-lg-8">
               <!--<input class="form-control" type="text">-->
-              <input type="radio" id="Male" name="fav_language" value="M" <?php if($results[0]->gender == 'M'){ echo 'checked="checked"';} ?>>
+              <input type="radio" id="Male" name="gender" value="M" <?php if($results[0]->gender == 'M'){ echo 'checked="checked"';} ?>>
               <label for="html">Male</label><br>
-              <input type="radio" id="Female" name="fav_language" value="F" <?php if($results[0]->gender == 'F'){ echo 'checked="checked"';} ?>>
+              <input type="radio" id="Female" name="gender" value="F" <?php if($results[0]->gender == 'F'){ echo 'checked="checked"';} ?>>
               <label for="css">Female</label><br>
-              <input type="radio" id="Other" name="fav_language" value="O" <?php if($results[0]->gender == 'O'){ echo 'checked="checked"';} ?>>
+              <input type="radio" id="Other" name="gender" value="O" <?php if($results[0]->gender == 'O'){ echo 'checked="checked"';} ?>>
               <label for="javascript">Other</label>
             </div>
           </div>
