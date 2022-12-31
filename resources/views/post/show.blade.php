@@ -19,11 +19,18 @@
         <p>{{ $post->content }}</p>
       </div>
       <div class="card-footer px-5 py-3 d-flex justify-content-end">
-        <a href="/post/{{$post->id}}/edit" class="btn btn-success rounded-pill me-2">Edit</a>
+      <?php
+        if(Session::has('loginID')){if($post->user_id == $post['data']->id){?>
+          <a href="/post/{{$post->id}}/edit" class="btn btn-success rounded-pill me-2">Edit</a>
+          <?php }} ?>
         <form action="/post/{{$post->id}}" method="POST">
           @csrf
           @method('DELETE')
+          <?php
+        if(Session::has('loginID')){if($post->user_id == $post['data']->id){?>
           <button type="submit" class="btn btn-danger rounded-pill">Delete</button>
+          <?php }} ?>
+          
         </form>
       </div>
     </div>

@@ -12,7 +12,7 @@
                 <div class="row">
                     <div class="col-sm-6 col-md-8">
                         <h4>{{$results[0]->name}} {{$results[0]->surname}}</h4>
-                        <small><cite title="San Francisco, USA">{{$results[0]->city}}, {{$results[0]->country_name}}<i class="glyphicon glyphicon-map-marker">
+                        <small><cite title="San Francisco, USA">{{$results[0]->city}} {{$results[0]->country_name}}<i class="glyphicon glyphicon-map-marker">
                         </i></cite></small>
                         <p>
                             <i class="glyphicon glyphicon-envelope"></i>{{$results[0]->email}}

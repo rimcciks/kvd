@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\User;
 use Session;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -59,8 +60,8 @@ class PostController extends Controller {
     $postData = ['title' => $request->title, 'category' => $request->category, 'content' => $request->content, 'image' => $imageName, 'user_id' => $data->id];
 
     Post::create($postData);
-    print_r($postData);
-    //return redirect('/post')->with(['message' => 'Post added successfully!', 'status' => 'success']);
+    //print_r($postData);
+    return redirect('/post')->with(['message' => 'Post added successfully!', 'status' => 'success']);
   }
 
   /**
@@ -70,7 +71,50 @@ class PostController extends Controller {
    * @return IlluminateHttpResponse
    */
   public function show(Post $post) {
-    return view('post.show', ['post' => $post]);
+    /*$data = array();
+        if(Session::has('loginID')){
+            $data = User::where('id', '=', Session::get('loginID'))->first();
+            $s =  "select u.id from users u left join posts p on u.id = p.user_id where u.id =" . $data->id;
+            $results = \DB::select( $s );
+            //$this->getCities();
+            //$this->getCountries();
+            //$user_id=$data[id];
+            print_r($results);
+            //print_r($results[0]->name);
+            //print_r($data);
+            
+        }
+        /*if($results[0]->id == $results[1]->id){
+          echo "test";
+          return view('post.edit', ['post' => $post]);
+        }else{
+          echo "nav vienāds";
+        }*/
+        $post['data']=$this->showbutton();
+        echo $post;
+    return view('post.show', ['post' => $post, ]);
+  }
+  public function showbutton() {
+    $data = array();
+        if(Session::has('loginID')){
+            $data = User::where('id', '=', Session::get('loginID'))->first();
+            //$s =  "select u.id from users u left join posts p on u.id = p.user_id where u.id =" . $data->id;
+            //$results = \DB::select( $s );
+            //$this->getCities();
+            //$this->getCountries();
+            //$user_id=$data[id];
+            //print_r($results);
+            //print_r($results[0]->name);
+            //print_r($data);
+            
+        }
+        /*if($results[0]->id == $results[1]->id){
+          echo "test";
+          return view('post.edit', ['post' => $post]);
+        }else{
+          echo "nav vienāds";
+        }*/
+    return $data;
   }
 
   /**
@@ -80,7 +124,8 @@ class PostController extends Controller {
    * @return IlluminateHttpResponse
    */
   public function edit(Post $post) {
-    return view('post.edit', ['post' => $post]);
+    
+        return view('post.edit', ['post' => $post]);
   }
 
   /**
