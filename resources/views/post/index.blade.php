@@ -27,7 +27,7 @@
 
   </div>
   @empty
-    <h2 class="text-center text-secondary p-4">No post found in the database!</h2>
+    <h2 class="text-center text-secondary p-4">There are no posts yet!</h2>
   @endforelse
   <div class="d-flex justify-content-center my-5">
     {{ $posts->onEachSide(1)->links() }}

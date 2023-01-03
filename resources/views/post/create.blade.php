@@ -15,6 +15,7 @@
           @csrf
           <div class="my-2">
             <input type="text" name="title" id="title" class="form-control @error('title') is-invalid @enderror" placeholder="Title" value="{{ old('title') }}">
+            
             @error('title')
               <div class="invalid-feedback">{{ $message }}</div>
             @enderror
