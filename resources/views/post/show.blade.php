@@ -44,7 +44,7 @@
           <form action="{{ url('comments') }}" method="POST">
             @csrf
             <input type="hidden" name="post_slug" value="{{$post->slug}}">
-            <textarea name="comment_body" class="form-control" rows="3" required></textarea>
+            <textarea name="comment_body" class="form-control" rows="3" ></textarea>
             <button type="submit" class="btn btn-primary mt-3">Submit</button>
           </form>
         </div>

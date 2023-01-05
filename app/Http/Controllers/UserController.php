@@ -25,9 +25,11 @@ class UserController extends Controller
             echo "{{$data->id}}";
             //print_r($results[0]->name);
             //print_r($data);
-            
+            return view("editProfile", compact('results'));
+        }else{
+            return back()->with('fail','Something is wrong');
         }
-        return view("editProfile", compact('results'));
+        
     }
     public function getCities(){
         if(Session::has('loginID')){
@@ -58,30 +60,26 @@ class UserController extends Controller
         //return view("auth.login");
     }
     public function updateUser(Request $request){
-        /*echo "test";
+        
+        //echo "test";
         //print_r($request);
         $request->validate([
-            'name'=>'required',
+            'name'=>'required|max:30',
+            'surname'=>'required|max:20'
             //'surname'=>'required'  
         ]);
-        $user->name = $request->name;
-        //$user->surname = $request->surname;
-        $res = $user->save();
-        /*if($res){
-            return back()->with('success','Changes have been saved');
-        }else{
-            return back()->with('fail','Something is wrong');
-        }*/
-        //return redirect('dashboard');*/
+        
+        //return redirect('dashboard');
         //echo "test";
          // Removed the type-hinted User model instance
-        DB::table('users')->where('id', '=', Session::get('loginID'))->update([
+         $res = DB::table('users')->where('id', '=', Session::get('loginID'))->update([
             'name' => $request->name,
             'surname' => $request->surname,
             'city_id' => (int) $request->city,
             'adressLine' => $request->adress_line,
             'gender' => $request->gender
         ]);
+        
         return redirect('Profile');
     }
     

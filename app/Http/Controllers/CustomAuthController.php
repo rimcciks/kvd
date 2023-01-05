@@ -17,8 +17,8 @@ class CustomAuthController extends Controller
     }
     public function registerUser(Request $request){
         $request->validate([
-            'name'=>'required',
-            'surname'=>'required',
+            'name'=>'required|max:30',
+            'surname'=>'required|max:20',
             'email'=>'required|email|unique:users',
             'password'=>'required|min:8|max:20'
         ]);
@@ -66,6 +66,8 @@ class CustomAuthController extends Controller
         if(Session::has('loginID')){
             Session::pull('loginID');
             return redirect('login');
+        }else{
+            return back()->with('fail','Something is wrong');
         }
     }
     

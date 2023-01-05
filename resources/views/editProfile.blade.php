@@ -18,12 +18,14 @@
             <div class="col-lg-8">
               <input class="form-control" name="name" type="text" value="<?php echo $results[0]->name;?>"  placeholder="Enter Name">
             </div>
+            <span class="text-danger">@error('name') {{$message}} @enderror</span>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Surname:</label>
             <div class="col-lg-8">
               <input class="form-control" name="surname" type="text" value="<?php echo $results[0]->surname;?>" placeholder="Enter Surname">
             </div>
+            <span class="text-danger">@error('surname') {{$message}} @enderror</span>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Adress line:</label>

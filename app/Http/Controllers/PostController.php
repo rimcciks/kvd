@@ -49,9 +49,9 @@ class PostController extends Controller {
         
     }
     $request->validate([
-      'title' => 'required',
-      'category' => 'required',
-      'content' => 'required|min:5',
+      'title' => 'required|max:100',
+      'category' => 'required|max:50',
+      'content' => 'required|min:50|max:1000',
       'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
       'slug' => '',
 

@@ -53,7 +53,7 @@ class CommentController extends Controller
             }else{
                 return response()->json([
                     'status' => 500,
-                    'message' => 'Something went wrong'
+                    'message' => 'Something is wrong'
                 ]); 
             }
         }else{
