@@ -123,6 +123,24 @@ class PostController extends Controller {
    * @return IlluminateHttpResponse
    */
   public function update(Request $request, Post $post) {
+    $data = array();
+    if(Session::has('loginID')){
+        $data = User::where('id', '=', Session::get('loginID'))->first();
+        
+        //print_r($results);
+        //echo "{{$data->id}}";
+        //print_r($results[0]->name);
+        //print_r($data);
+        
+    }
+    $request->validate([
+        'title' => 'required|max:100',
+        'category' => 'required|max:50',
+        'content' => 'required|min:50|max:1000',
+        'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        'slug' => '',
+  
+      ]);
     $imageName = '';
     if ($request->hasFile('file')) {
       $imageName = time() . '.' . $request->file->extension();
@@ -134,7 +152,7 @@ class PostController extends Controller {
       $imageName = $post->image;
     }
 
-    $postData = ['title' => $request->title, 'category' => $request->category, 'content' => $request->content, 'image' => $imageName];
+    $postData = ['title' => $request->title, 'category' => $request->category, 'content' => $request->content, 'image' => $imageName, 'user_id' => $data->id, 'slug' => $request->title];
 
     $post->update($postData);
     return redirect('/post')->with(['message' => 'Post updated successfully!', 'status' => 'success']);

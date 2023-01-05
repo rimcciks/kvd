@@ -15,21 +15,31 @@
           @csrf
           @method('PUT')
           <div class="my-2">
-            <input type="text" name="title" id="title" class="form-control" placeholder="Title" value="{{ $post->title }}" required>
+            <input type="text" name="title" id="title" class="form-control" placeholder="Title" value="{{ $post->title }}">
+            <span class="text-danger">@error('title') {{$message}} @enderror</span>
+           
+
+          
           </div>
 
           <div class="my-2">
-            <input type="text" name="category" id="category" class="form-control" placeholder="Category" value="{{ $post->category }}" required>
+            <input type="text" name="category" id="category" class="form-control" placeholder="Category" value="{{ $post->category }}" >
+            <span class="text-danger">@error('category') {{$message}} @enderror</span>
+          
           </div>
 
           <div class="my-2">
             <input type="file" name="file" id="file" accept="image/*" class="form-control">
+            <span class="text-danger">@error('file') {{$message}} @enderror</span>
+          
           </div>
 
           <img src="{{ asset('storage/images/'.$post->image) }}" class="img-fluid img-thumbnail" width="150">
 
           <div class="my-2">
-            <textarea name="content" id="content" rows="6" class="form-control" placeholder="Post Content" required>{{ $post->content }}</textarea>
+            <textarea name="content" id="content" rows="6" class="form-control" placeholder="Post Content">{{ $post->content }}</textarea>
+            <span class="text-danger">@error('content') {{$message}} @enderror</span>
+          
           </div>
 
           <div class="my-2">
