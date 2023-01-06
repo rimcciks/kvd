@@ -13,7 +13,8 @@ class AddForeignKeyTable extends Migration
      */
     public function up()
     {
-        Schema::table('comments', function (Blueprint $table) {
+        Schema::table('comments', function (Blueprint $table) 
+        {
   
             $table->bigInteger('user_id')->unsigned()->change();
             $table->bigInteger('post_id')->unsigned()->change();

@@ -7,7 +7,8 @@
 <div class="row my-4">
   <div class="col-lg-8 mx-auto">
     <div class="card shadow">
-      <img src="{{ asset('storage/images/'.$post->image) }}" class="img-fluid card-img-top">
+      <img src="{{ asset('storage/images/'.$post->image) }}" 
+      class="img-fluid card-img-top">
       <div class="card-body p-5">
         <div class="d-flex justify-content-between align-items-center">
           <p class="btn btn-dark rounded-pill">{{ $post->category }}</p>
@@ -20,16 +21,26 @@
       </div>
       <div class="card-footer px-5 py-3 d-flex justify-content-end">
       <?php
-        if(Session::has('loginID')){if($post->user_id == $post['data']->id){?>
+        if(Session::has('loginID'))
+        {
+          if($post->user_id == $post['data']->id)
+          {?>
           <a href="/post/{{$post->id}}/edit" class="btn btn-success rounded-pill me-2">Edit</a>
-          <?php }} ?>
+          <?php 
+        }
+        } ?>
         <form action="/post/{{$post->id}}" method="POST">
           @csrf
           @method('DELETE')
           <?php
-        if(Session::has('loginID')){if($post->user_id == $post['data']->id){?>
+        if(Session::has('loginID'))
+        {
+          if($post->user_id == $post['data']->id)
+          {?>
           <button type="submit" class="btn btn-danger rounded-pill">Delete</button>
-          <?php }} ?>
+          <?php 
+        }
+        } ?>
           
         </form>
       </div>
@@ -65,9 +76,14 @@
           </div>
           <div>
           <?php
-          if(Session::has('loginID')){if($comment->user_id == $post['data']->id){?>
+          if(Session::has('loginID'))
+          {
+            if($comment->user_id == $post['data']->id)
+            {?>
             <button type="button" value="{{ $comment->id }}" class="deleteComment btn btn-danger rounded-pill me-2">Delete</button>
-          <?php }} ?>
+          <?php 
+        }
+        } ?>
             
           </div>
         </div>
@@ -83,16 +99,20 @@
 @endsection
 @section('scripts')
             <script>
-              $(document).ready(function() {
+              $(document).ready(function() 
+              {
 
-                $.ajaxSetup({
+                $.ajaxSetup(
+                  {
                   headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                   }
                 });
 
-                $(document).on('click', '.deleteComment', function() {
-                  if(confirm('Are you sure you want to delete this comment?')){
+                $(document).on('click', '.deleteComment', function() 
+                {
+                  if(confirm('Are you sure you want to delete this comment?'))
+                  {
                     var thisClicked = $(this);
                     var comment_id = thisClicked.val();
 
@@ -102,12 +122,15 @@
                       data: {
                         'comment_id': comment_id
                       },
-                      success: function (res){
-                        if(res.status == 200){
+                      success: function (res)
+                      {
+                        if(res.status == 200)
+                        {
                           thisClicked.closest('.comment-container').remove();
                           alert(res.message);
                         }
-                        else{
+                        else
+                        {
                           alert(res.message);
                         }
                       }

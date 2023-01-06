@@ -7,7 +7,8 @@
 @if(session('message'))
 <div class="alert alert-{{ session('status') }} alert-dismissible fade show" role="alert">
   <strong>{{ session('message') }}</strong>
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  <button type="button" class="btn-close" 
+  data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 @endif
 <div class="row g-4 mt-1">
@@ -16,7 +17,8 @@
 
       <div class="card shadow">
         <a href="post/{{ $row->id }}">
-          <img src="{{ asset('storage/images/'.$row->image) }}" class="card-img-top img-fluid">
+          <img src="{{ asset('storage/images/'.$row->image) }}" 
+          class="card-img-top img-fluid">
         </a>
         <div class="card-body">
           <p class="btn btn-success rounded-pill btn-sm">{{ $row->category }}</p>

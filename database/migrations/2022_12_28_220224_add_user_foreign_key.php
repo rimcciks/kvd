@@ -13,7 +13,8 @@ class AddUserForeignKey extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) 
+        {
             $table->unsignedBigInteger('city_id');
             $table->foreign('city_id')->references('id')->on('city');
         });

@@ -1,0 +1,11 @@
+"filename", "language", "PHP", "comment", "blank", "total"
+"c:\wamp64\www\kvd_istais kods\resources\views\Profile.blade.php", "PHP", 38, 0, 4, 42
+"c:\wamp64\www\kvd_istais kods\resources\views\auth\login.blade.php", "PHP", 45, 0, 4, 49
+"c:\wamp64\www\kvd_istais kods\resources\views\auth\registration.blade.php", "PHP", 51, 0, 3, 54
+"c:\wamp64\www\kvd_istais kods\resources\views\editProfile.blade.php", "PHP", 110, 3, 3, 116
+"c:\wamp64\www\kvd_istais kods\resources\views\layout\app.blade.php", "PHP", 50, 0, 8, 58
+"c:\wamp64\www\kvd_istais kods\resources\views\post\create.blade.php", "PHP", 31, 24, 5, 60
+"c:\wamp64\www\kvd_istais kods\resources\views\post\edit.blade.php", "PHP", 27, 23, 8, 58
+"c:\wamp64\www\kvd_istais kods\resources\views\post\index.blade.php", "PHP", 34, 0, 6, 40
+"c:\wamp64\www\kvd_istais kods\resources\views\post\show.blade.php", "PHP", 130, 0, 12, 142
+"Total", "-", 516, 50, 53, 619

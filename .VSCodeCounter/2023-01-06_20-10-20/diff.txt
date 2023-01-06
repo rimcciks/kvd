@@ -1,0 +1,53 @@
+Date : 2023-01-06 20:10:20
+Directory : c:\wamp64\www\kvd_istais kods\resources\views
+Total : 21 files,  272 codes, -78 comments, 2 blanks, all 196 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| PHP      |         21 |        272 |        -78 |          2 |        196 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++----------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                               | files      | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                  |         21 |        272 |        -78 |          2 |        196 |
+| . (Files)                                                                                          |          2 |        148 |          3 |          7 |        158 |
+| ..                                                                                                 |         12 |       -244 |       -128 |        -51 |       -423 |
+| ..\..                                                                                              |         12 |       -244 |       -128 |        -51 |       -423 |
+| ..\..\database                                                                                     |         12 |       -244 |       -128 |        -51 |       -423 |
+| ..\..\database\migrations                                                                          |         12 |       -244 |       -128 |        -51 |       -423 |
+| auth                                                                                               |          2 |         96 |          0 |          7 |        103 |
+| layout                                                                                             |          1 |         50 |          0 |          8 |         58 |
+| post                                                                                               |          4 |        222 |         47 |         31 |        300 |
++----------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++----------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                                           | language | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| c:\wamp64\www\kvd_istais kods\database\migrations\2019_08_19_000000_create_failed_jobs_table.php   | PHP      |        -24 |        -10 |         -4 |        -38 |
+| c:\wamp64\www\kvd_istais kods\database\migrations\2022_12_27_183742_create_users_table.php         | PHP      |        -22 |        -10 |         -4 |        -36 |
+| c:\wamp64\www\kvd_istais kods\database\migrations\2022_12_28_084628_create_posts_table.php         | PHP      |        -23 |        -10 |         -3 |        -36 |
+| c:\wamp64\www\kvd_istais kods\database\migrations\2022_12_28_175820_add_to_users_table.php         | PHP      |        -20 |        -11 |         -4 |        -35 |
+| c:\wamp64\www\kvd_istais kods\database\migrations\2022_12_28_181609_country.php                    | PHP      |        -18 |        -11 |         -4 |        -33 |
+| c:\wamp64\www\kvd_istais kods\database\migrations\2022_12_28_182329_city.php                       | PHP      |        -20 |        -11 |         -4 |        -35 |
+| c:\wamp64\www\kvd_istais kods\database\migrations\2022_12_28_220224_add_user_foreign_key.php       | PHP      |        -18 |        -11 |         -4 |        -33 |
+| c:\wamp64\www\kvd_istais kods\database\migrations\2022_12_29_151731_add_user_adress_line.php       | PHP      |        -18 |        -11 |         -4 |        -33 |
+| c:\wamp64\www\kvd_istais kods\database\migrations\2022_12_30_114444_add_user_id_in_posts_table.php | PHP      |        -21 |        -11 |         -4 |        -36 |
+| c:\wamp64\www\kvd_istais kods\database\migrations\2022_12_31_143314_create_comments_table.php      | PHP      |        -24 |        -10 |         -6 |        -40 |
+| c:\wamp64\www\kvd_istais kods\database\migrations\2023_01_02_182759_alter_posts_table.php          | PHP      |        -16 |        -11 |         -4 |        -31 |
+| c:\wamp64\www\kvd_istais kods\database\migrations\2023_01_03_131410_add_foreign_key_table.php      | PHP      |        -20 |        -11 |         -6 |        -37 |
+| c:\wamp64\www\kvd_istais kods\resources\views\Profile.blade.php                                    | PHP      |         38 |          0 |          4 |         42 |
+| c:\wamp64\www\kvd_istais kods\resources\views\auth\login.blade.php                                 | PHP      |         45 |          0 |          4 |         49 |
+| c:\wamp64\www\kvd_istais kods\resources\views\auth\registration.blade.php                          | PHP      |         51 |          0 |          3 |         54 |
+| c:\wamp64\www\kvd_istais kods\resources\views\editProfile.blade.php                                | PHP      |        110 |          3 |          3 |        116 |
+| c:\wamp64\www\kvd_istais kods\resources\views\layout\app.blade.php                                 | PHP      |         50 |          0 |          8 |         58 |
+| c:\wamp64\www\kvd_istais kods\resources\views\post\create.blade.php                                | PHP      |         31 |         24 |          5 |         60 |
+| c:\wamp64\www\kvd_istais kods\resources\views\post\edit.blade.php                                  | PHP      |         27 |         23 |          8 |         58 |
+| c:\wamp64\www\kvd_istais kods\resources\views\post\index.blade.php                                 | PHP      |         34 |          0 |          6 |         40 |
+| c:\wamp64\www\kvd_istais kods\resources\views\post\show.blade.php                                  | PHP      |        130 |          0 |         12 |        142 |
+| Total                                                                                              |          |        272 |        -78 |          2 |        196 |
++----------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+

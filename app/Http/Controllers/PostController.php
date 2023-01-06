@@ -11,7 +11,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class PostController extends Controller {
+class PostController extends Controller 
+{
   /**
    * Display a listing of the resource.
    *
@@ -77,7 +78,7 @@ class PostController extends Controller {
   public function show(Post $post) {
     
         $post['data']=$this->showbutton();
-        echo $post;
+        //echo $post;
         
     return view('post.show', ['post' => $post, ]);
   }
@@ -110,7 +111,8 @@ class PostController extends Controller {
    * @param  AppModelsPost  $post
    * @return IlluminateHttpResponse
    */
-  public function edit(Post $post) {
+  public function edit(Post $post) 
+  {
     
         return view('post.edit', ['post' => $post]);
   }
@@ -122,9 +124,11 @@ class PostController extends Controller {
    * @param  AppModelsPost  $post
    * @return IlluminateHttpResponse
    */
-  public function update(Request $request, Post $post) {
+  public function update(Request $request, Post $post) 
+  {
     $data = array();
-    if(Session::has('loginID')){
+    if(Session::has('loginID'))
+    {
         $data = User::where('id', '=', Session::get('loginID'))->first();
         
         //print_r($results);
@@ -142,13 +146,17 @@ class PostController extends Controller {
   
       ]);
     $imageName = '';
-    if ($request->hasFile('file')) {
+    if ($request->hasFile('file'))
+     {
       $imageName = time() . '.' . $request->file->extension();
       $request->file->storeAs('public/images', $imageName);
-      if ($post->image) {
+      if ($post->image) 
+      {
         Storage::delete('public/images/' . $post->image);
       }
-    } else {
+    } 
+    else 
+    {
       $imageName = $post->image;
     }
 
@@ -164,7 +172,8 @@ class PostController extends Controller {
    * @param  AppModelsPost  $post
    * @return IlluminateHttpResponse
    */
-  public function destroy(Post $post) {
+  public function destroy(Post $post) 
+  {
     Comment::where('post_id', $post->id)->delete();
     
     $post->delete();

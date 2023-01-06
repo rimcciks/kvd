@@ -22,16 +22,22 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;">
         <div>
         <?php
-        if(Session::has('loginID')){?>
+        if(Session::has('loginID'))
+        {?>
           <a href="@yield('link')" class="btn btn-primary rounded-pill">@yield('link_text')</a>
-          <?php } else { ?>
+          <?php } 
+          else 
+          { ?>
             <a href="login" class="btn btn-primary rounded-pill">@yield('link_text')</a>
           <?php } ?>
         </div>
         <?php
-        if(Session::has('loginID')){?>
+        if(Session::has('loginID'))
+        {?>
           <a href="logout" class="btn btn-primary rounded-pill">Logout</a>
-          <?php } else { ?>
+          <?php }
+           else 
+           { ?>
           <a href="login" class="btn btn-primary rounded-pill">Login</a>
           <?php } 
         ?>

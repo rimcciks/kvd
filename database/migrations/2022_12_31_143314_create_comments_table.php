@@ -13,7 +13,8 @@ class CreateCommentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('comments', function (Blueprint $table) {
+        Schema::create('comments', function (Blueprint $table) 
+        {
             $table->id();
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('post_id')->unsigned();

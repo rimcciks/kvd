@@ -1,0 +1,36 @@
+Date : 2023-01-06 20:09:50
+Directory : c:\wamp64\www\kvd_istais kods\database\migrations
+Total : 12 files,  244 codes, 128 comments, 51 blanks, all 423 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| PHP      |         12 |        244 |        128 |         51 |        423 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++----------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                               | files      | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                  |         12 |        244 |        128 |         51 |        423 |
++----------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++----------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                                           | language | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| c:\wamp64\www\kvd_istais kods\database\migrations\2019_08_19_000000_create_failed_jobs_table.php   | PHP      |         24 |         10 |          4 |         38 |
+| c:\wamp64\www\kvd_istais kods\database\migrations\2022_12_27_183742_create_users_table.php         | PHP      |         22 |         10 |          4 |         36 |
+| c:\wamp64\www\kvd_istais kods\database\migrations\2022_12_28_084628_create_posts_table.php         | PHP      |         23 |         10 |          3 |         36 |
+| c:\wamp64\www\kvd_istais kods\database\migrations\2022_12_28_175820_add_to_users_table.php         | PHP      |         20 |         11 |          4 |         35 |
+| c:\wamp64\www\kvd_istais kods\database\migrations\2022_12_28_181609_country.php                    | PHP      |         18 |         11 |          4 |         33 |
+| c:\wamp64\www\kvd_istais kods\database\migrations\2022_12_28_182329_city.php                       | PHP      |         20 |         11 |          4 |         35 |
+| c:\wamp64\www\kvd_istais kods\database\migrations\2022_12_28_220224_add_user_foreign_key.php       | PHP      |         18 |         11 |          4 |         33 |
+| c:\wamp64\www\kvd_istais kods\database\migrations\2022_12_29_151731_add_user_adress_line.php       | PHP      |         18 |         11 |          4 |         33 |
+| c:\wamp64\www\kvd_istais kods\database\migrations\2022_12_30_114444_add_user_id_in_posts_table.php | PHP      |         21 |         11 |          4 |         36 |
+| c:\wamp64\www\kvd_istais kods\database\migrations\2022_12_31_143314_create_comments_table.php      | PHP      |         24 |         10 |          6 |         40 |
+| c:\wamp64\www\kvd_istais kods\database\migrations\2023_01_02_182759_alter_posts_table.php          | PHP      |         16 |         11 |          4 |         31 |
+| c:\wamp64\www\kvd_istais kods\database\migrations\2023_01_03_131410_add_foreign_key_table.php      | PHP      |         20 |         11 |          6 |         37 |
+| Total                                                                                              |          |        244 |        128 |         51 |        423 |
++----------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
