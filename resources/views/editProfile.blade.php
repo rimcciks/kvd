@@ -2,8 +2,13 @@
 @section('title', 'Edit profile')
 @section('link_text', 'Go to All Posts')
 @section('link', '/post')
+@section('profile_text', 'Profile')
+@section('profileLink', '/Profile')
+@section('logout_text', 'Logout')
+@section('logoutLink', '/logout')
 
 @section('content')
+
 <div class="container bootstrap snippets bootdey">
     <h1 class="text-primary">Edit Profile</h1>
       <hr>

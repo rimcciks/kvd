@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <div class="container">
+<div class="container">
     <div class="row my-2">
       <div class="col-lg-12 d-flex justify-content-between align-items-center mx-auto">
         <div>
@@ -24,17 +24,18 @@
         <?php
         if(Session::has('loginID'))
         {?>
-          <a href="@yield('link')" class="btn btn-primary rounded-pill">@yield('link_text')</a>
+          <a href="@yield('profileLink')" class="btn btn-primary rounded-pill me-2">@yield('profile_text')</a>
+          <a href="@yield('link')" class="btn btn-primary rounded-pill me-2">@yield('link_text')</a>
           <?php } 
           else 
           { ?>
-            <a href="login" class="btn btn-primary rounded-pill">@yield('link_text')</a>
+            <a href="registration" class="btn btn-primary rounded-pill me-2">Register</a>
           <?php } ?>
         </div>
         <?php
         if(Session::has('loginID'))
         {?>
-          <a href="logout" class="btn btn-primary rounded-pill">Logout</a>
+          <a href="@yield('logoutLink')" class="btn btn-primary rounded-pill">@yield('logout_text')</a>
           <?php }
            else 
            { ?>
@@ -50,7 +51,6 @@
     @yield('content')
 
   </div>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.bundle.min.js'></script>
   
   @yield('scripts')
 </body>

@@ -1,6 +1,10 @@
 @extends('layout.app')
 @section('link_text', 'Add New Post')
 @section('link', '/post/create')
+@section('profile_text', 'Profile')
+@section('profileLink', '/Profile')
+@section('logout_text', 'Logout')
+@section('logoutLink', '/logout')
 
 @section('content')
 

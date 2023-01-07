@@ -1,6 +1,10 @@
 @extends('layout.app')
 @section('link_text', 'Go to All Posts')
 @section('link', '/post')
+@section('profile_text', 'Profile')
+@section('profileLink', '/Profile')
+@section('logout_text', 'Logout')
+@section('logoutLink', '/logout')
 
 @section('content')
 

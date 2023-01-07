@@ -6,8 +6,13 @@
 @section('loginlink', '/login')
 @section('logout_text', 'Go to All Posts')
 @section('logoutlink', '/logout')
+@section('profile_text', 'Profile')
+@section('profileLink', '/Profile')
+@section('logout_text', 'Logout')
+@section('logoutLink', '/logout')
 
 @section('content')
+
         <div class="container">
             <div class="row">
                <div class="col-md-4 col-md-offset-4" style="margin-top:20px;">
